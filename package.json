@@ -1,0 +1,36 @@
+{
+  "name": "logistics-ai",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "MKSS Foundation - Ethical Logistics Web Platform",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "server": "node server/index.js",
+    "dev:full": "concurrently \"npm run server\" \"npm run dev\"",
+    "mkss:start": "concurrently --names \"🚀SERVER,⚡FRONTEND\" --prefix-colors \"bgBlue.bold,bgGreen.bold\" \"npm run server\" \"npm run dev\"",
+    "mkss:setup": "node setup.js",
+    "mkss:build": "npm run build && echo '✅ MKSS Logistics Platform built successfully!'",
+    "mkss:clean": "rimraf node_modules package-lock.json dist && npm install",
+    "mkss:health": "curl -s http://localhost:5000/api/health || echo '❌ Server not running'"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.6.0",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "vite": "^7.0.4"
+  }
+}
